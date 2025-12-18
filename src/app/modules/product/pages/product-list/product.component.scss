@@ -1,0 +1,24 @@
+.full-width {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+button.btn-red {
+  background-color: #EC0000;
+  color: #ffffff;
+}
+
+button.btn-red:hover {
+  background-color: #b71c1c;
+}
+
+th.mat-column-actions, td.mat-column-actions {
+  width: auto;
+  text-align: center;
+}

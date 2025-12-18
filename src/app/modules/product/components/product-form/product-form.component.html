@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>
+  {{ isEditMode ? 'Editar Produto' : 'Novo Produto' }}
+</h2>
+
+<form [formGroup]="form" mat-dialog-content>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nome</mat-label>
+    <input matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Preço</mat-label>
+    <input matInput type="number" formControlName="price" />
+  </mat-form-field>
+
+  <mat-slide-toggle formControlName="inStock">
+    Em estoque
+  </mat-slide-toggle>
+
+</form>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancelar</button>
+  <button mat-raised-button class="btn-red" (click)="save()">
+    Salvar
+  </button>
+</mat-dialog-actions>

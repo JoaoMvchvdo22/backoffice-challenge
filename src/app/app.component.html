@@ -2,7 +2,7 @@
 
   <mat-sidenav mode="side" opened class="sidenav" [class.collapsed]="isCollapsed">
     <mat-toolbar class="toolbar-red sidenav-toolbar">
-      <img src="./../assets/images/1Vjka2te_400x400.jpg" alt="">
+      <img *ngIf="!isCollapsed" src="./../assets/images/1Vjka2te_400x400.jpg" alt="">
       <span *ngIf="!isCollapsed">Backoffice</span>
 
       <button mat-icon-button (click)="toggleSidenav()">

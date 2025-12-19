@@ -1,13 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../interfaces/product.interface';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
+  //private apiUrl: string = 'https://api.com/products';
+
   private products: Product[] = [];
   private currentId = 1;
+
+  constructor(private http: HttpClient) { }
 
   getAll(): Product[] {
     return [...this.products];
@@ -64,5 +70,29 @@ export class ProductService {
     product.inStock = inStock;
     return product;
   }
+
+  // getAll(): Observable<Product[]> {
+  //   return this.http.get<Product[]>(this.apiUrl);
+  // }
+
+  // getById(id: number): Observable<Product> {
+  //   return this.http.get<Product>(`${this.apiUrl}/${id}`);
+  // }
+
+  // create(product: Product): Observable<Product> {
+  //   return this.http.post<Product>(this.apiUrl, product);
+  // }
+
+  // update(id: number, product: Product): Observable<Product> {
+  //   return this.http.put<Product>(`${this.apiUrl}/${id}`, product);
+  // }
+
+  // delete(id: number): Observable<void> {
+  //   return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  // }
+
+  // patchStock(id: number, inStock: boolean): Observable<Product> {
+  //   return this.http.patch<Product>(`${this.apiUrl}/${id}`, { inStock });
+  // }
 
 }
